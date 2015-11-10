@@ -1,4 +1,6 @@
-# look for incoming gold standard csv files and extract and format relevant data into files
+# look for incoming csv files and extract and format relevant data into files
+# Once it's done processing a csv file, it renames it with a '.DONE' extension
+
 import pandas as pd
 import numpy as np
 import os as os
@@ -22,6 +24,7 @@ print("Today is: " + today_yyyymmdd)
 onlyfiles = [ f for f in os.listdir(inpath) if isfile(join(inpath,f)) ]
 
 csv = [k for k in onlyfiles if k.endswith(".csv")]
+print(csv)
 
 if len(csv) == 0:
 	print("No files to process")
@@ -33,7 +36,8 @@ spacer = "\n-------------\n"
 fout = io.open(outpath + "report-" + today_yyyymmdd + ".txt", 'w', newline='\r\n')
 for filename in csv:
 	df = pd.read_csv(inpath + filename)
-	today = df[df.OnMarketDate.str.contains("2015-11-07")]
+
+	today = df[df.OnMarketDate.str.contains(today_yyyymmdd)]
 	for index, row in today.iterrows():
 		for col in cols:
 			text = col + ": " + str(row[col]) 

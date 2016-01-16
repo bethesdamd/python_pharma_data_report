@@ -1,5 +1,7 @@
 # look for incoming csv files and extract and format relevant data into files
 # Once it's done processing a csv file, it renames it with a '.DONE' extension
+# crontab looks like this:
+#     */1 * * * * /Users/david/anaconda/bin/python  /Users/david/github_pharma_reports/drug_updates_format.py
 # Incoming file format, example:
 # CompanyName,ProductNameLong,PackageIdentifier,Description,OnMarketDate,BrandGenericStatus,PackageSize,MarketClasses,SpecificDrugProductName,SpecificDrugProductID,OffMarketDate,WACBeginDate,WACPrice,WACPriceChange,WACUnitPrice,DPBeginDate,DPPrice,DPPriceChange,DPUnitPrice
 # "Accord Healthcare, Inc.",Montelukast Sodium 10mg Tablet,16729-0119-17,"bottle, 1,000 each Montelukast Sod 10mg, Oral tablet",9/11/2014 0:00,Generic,1000,"Antileukotriene Anti-asthmatics, Systemic (Oral)",Montelukast Sodium 10mg Oral tablet,7927,,11/6/2015,390,(-) 51.25,0.39,,,,

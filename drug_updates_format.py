@@ -1,6 +1,7 @@
 # As I recall, the purpose of this was to take a standard large dump of pharma data from Prospector,
 # which often contains data for multiple dates, and a ton of columns,
 # and retain just data for today, and just the columns specified in the 'cols' variable below.
+# It then writes out a new report with just that data.
 # So it makes it easier for him to extract a report of today's price moves, and this report can be sent in an email
 # to prospects.
 # The way this is run is it looks in a Dropbox folder and if it sees a new file (that doesn't have a .DONE extenstion),
@@ -12,7 +13,6 @@
 # CompanyName,ProductNameLong,PackageIdentifier,Description,OnMarketDate,BrandGenericStatus,PackageSize,MarketClasses,SpecificDrugProductName,SpecificDrugProductID,OffMarketDate,WACBeginDate,WACPrice,WACPriceChange,WACUnitPrice,DPBeginDate,DPPrice,DPPriceChange,DPUnitPrice
 # "Accord Healthcare, Inc.",Montelukast Sodium 10mg Tablet,16729-0119-17,"bottle, 1,000 each Montelukast Sod 10mg, Oral tablet",9/11/2014 0:00,Generic,1000,"Antileukotriene Anti-asthmatics, Systemic (Oral)",Montelukast Sodium 10mg Oral tablet,7927,,11/6/2015,390,(-) 51.25,0.39,,,,
 # "Accord Healthcare, Inc.",Topotecan Hydrochloride 4mg Powder for Injection,16729-0151-31,"vial, 1 each Topotecan HCl 4mg, Powder for solution for injection",7/23/2013 0:00,Generic,1,Camptothecin Analogs (Intravenous),Topotecan Hydrochloride 4mg Powder for solution for injection,9410,,11/6/2015,140,(-) 38.86,140,,,,
-
 
 
 import pandas as pd
